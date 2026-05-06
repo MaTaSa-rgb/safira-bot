@@ -1,0 +1,134 @@
+{
+  "trading_mode": "futures",
+  "margin_mode": "isolated",
+  "max_open_trades": 3,
+  "stake_currency": "USDT",
+  "stake_amount": "unlimited",
+  "tradable_balance_ratio": 0.99,
+  "fiat_display_currency": "USD",
+  "dry_run": true,
+  "dry_run_wallet": 1000,
+  "cancel_open_orders_on_exit": true,
+
+  "exchange": {
+    "name": "kucoin",
+    "key": "TU_API_KEY_AQUI",
+    "secret": "TU_SECRET_KEY_AQUI",
+    "password": "TU_PASSPHRASE_AQUI",
+    "ccxt_config": {
+      "enableRateLimit": true
+    },
+    "ccxt_async_config": {
+      "enableRateLimit": true
+    },
+    "pair_whitelist": [
+      "BTC/USDT:USDT",
+      "ETH/USDT:USDT",
+      "SOL/USDT:USDT",
+      "BNB/USDT:USDT"
+    ],
+    "pair_blacklist": [
+      "BNB/.*"
+    ]
+  },
+
+  "entry_pricing": {
+    "price_side": "same",
+    "use_order_book": true,
+    "order_book_top": 1,
+    "price_last_balance": 0.0,
+    "check_depth_of_market": {
+      "enabled": false,
+      "bids_to_ask_delta": 1
+    }
+  },
+
+  "exit_pricing": {
+    "price_side": "same",
+    "use_order_book": true,
+    "order_book_top": 1
+  },
+
+  "leverage_config": {
+    "default_leverage": 5,
+    "BTC/USDT:USDT": 5,
+    "ETH/USDT:USDT": 5,
+    "SOL/USDT:USDT": 3,
+    "BNB/USDT:USDT": 3
+  },
+
+  "stoploss": -0.05,
+  "trailing_stop": false,
+  "trailing_stop_positive": 0.02,
+  "trailing_stop_positive_offset": 0.03,
+  "trailing_only_offset_is_reached": true,
+
+  "minimal_roi": {
+    "0":  0.08,
+    "30": 0.05,
+    "60": 0.03,
+    "120": 0.02
+  },
+
+  "timeframe": "1h",
+
+  "position_adjustment_enable": false,
+  "max_entry_position_adjustment": 0,
+
+  "order_types": {
+    "entry": "limit",
+    "exit": "limit",
+    "stoploss": "market",
+    "stoploss_on_exchange": true,
+    "stoploss_on_exchange_interval": 60
+  },
+
+  "order_time_in_force": {
+    "entry": "GTC",
+    "exit": "GTC"
+  },
+
+  "pairlists": [
+    {
+      "method": "StaticPairList"
+    }
+  ],
+
+  "telegram": {
+    "enabled": false,
+    "token": "TU_TELEGRAM_BOT_TOKEN",
+    "chat_id": "TU_CHAT_ID",
+    "notification_settings": {
+      "status": "on",
+      "warning": "on",
+      "startup": "on",
+      "entry": "on",
+      "entry_fill": "on",
+      "exit": "on",
+      "exit_fill": "on",
+      "exit_cancel": "on",
+      "protection_trigger": "on",
+      "protection_trigger_global": "on"
+    }
+  },
+
+  "api_server": {
+    "enabled": true,
+    "listen_ip_address": "0.0.0.0",
+    "listen_port": 8080,
+    "verbosity": "error",
+    "enable_openapi": false,
+    "jwt_secret_key": "CAMBIA_ESTO_POR_UNA_CLAVE_ALEATORIA_LARGA",
+    "ws_token": "CAMBIA_ESTO_TAMBIEN",
+    "CORS_origins": [],
+    "username": "safira",
+    "password": "CAMBIA_ESTA_PASSWORD"
+  },
+
+  "bot_name": "SAFIRA",
+  "initial_state": "running",
+  "force_entry_enable": false,
+  "internals": {
+    "process_throttle_secs": 5
+  }
+}
